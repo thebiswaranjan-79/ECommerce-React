@@ -1,12 +1,13 @@
+import { Button } from 'reactstrap'
 import './App.css'
 
 function App() {
   
 
   return (
-    <>
-      app
-    </>
+    <div>
+      <Button color="primary">Click Me</Button>
+    </div>
   )
 }
 
