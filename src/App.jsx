@@ -1,12 +1,13 @@
 import { Button } from 'reactstrap'
 import './App.css'
+import Header from './components/Header/Header'
 
 function App() {
   
 
   return (
     <div>
-      <Button color="primary">Click Me</Button>
+       <Header color='light' light={true} expand='md' container='md' fixed='top' />
     </div>
   )
 }
