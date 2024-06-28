@@ -10,8 +10,8 @@
 }
 
 
-.category-list {
-    margin-top: 3rem;
+#categoryList {
+    margin-top: 5rem;
     gap: 1rem;
 }
 
@@ -37,5 +37,8 @@
 .category-item:hover {
     box-shadow: 0px 0px;
     transition: box-shadow 0.15s linear 0s;
+}
+.welcome-wrapper{
+    margin-top: 5rem;
 }
 
