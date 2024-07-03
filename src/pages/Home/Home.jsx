@@ -25,7 +25,7 @@ function Home() {
                 <div className="category-list d-flex flex-row justify-content-between align-items-center" id="categoryList">  
                    <CategoryItem itemName= 'All Products' />
 
-                   {categories && categories.map(category => <CategoryItem itemName={category} key={category} ></CategoryItem>) }
+                   {categories && categories.map(category => <CategoryItem itemName={category} key={category} filter={category} ></CategoryItem>) }
 
                 </div>
                 <div className="category-title text-center">

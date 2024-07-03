@@ -1,11 +1,11 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import './ProductBox.css';
 
 function ProductBox({ProductImage, name, price}) {
   return (
     <div>
-        <Link to="/products/2" target="_blank" className="product-item text-decoration-none d-inline-block">
+        <Link to="/products/2" target="_blank" className="product-item text-decoration-none ">
                  <div className="product-img">
                      <img src={ProductImage} alt="0" />
                 </div>
