@@ -24,7 +24,7 @@ function ProductList() {
 
   useEffect(() => {
     downloadProducts(query.get("category"));
-  }, []);
+  }, [query.get("category")]);
 
   return (
     <div className="container">

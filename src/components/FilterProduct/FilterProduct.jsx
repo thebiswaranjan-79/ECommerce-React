@@ -1,19 +1,19 @@
 
-import { useEffect } from "react";
 import "./FilterProduct.css";
-import axios from "axios";
-import { getAllCategories } from "../../apis/fakeStoreProdApis";
+
+import useCategory from "../../hooks/useCategory";
+import { useNavigate } from "react-router-dom";
 
 function FilterProduct() {
   const minPriceOptions = [0, 10, 20, 50, 100, 200, 1000];
   const maxPriceOptions = [0, 1000, 2000, 3000, 5000, 100000];
 
-  async function downloadCategories(){
-    const response = await axios.get(getAllCategories);
+  const[categories] = useCategory();
+  const navigate = useNavigate();
+
+  function handleCategoryNavigate(category){
+      navigate(`/products?category=${category}`)
   }
-  useEffect(() => {
-    downloadCategories();
-  }, [])
 
   return (
     <div className="product-list-sidebar d-flex flex-column">
@@ -31,36 +31,9 @@ function FilterProduct() {
       <div id="categoryList">
         {/* Will be Populated by Js */}
 
-        <a
-          href="productList.html?category=electronics"
-          className="d-flex text-decoration-none"
-        >
-          Electronics
-        </a>
-        <a
-          href="productList.html?category=jewelery"
-          className="d-flex text-decoration-none"
-        >
-          Jewellary
-        </a>
-        <a
-          href="productList.html?category=men's clothing"
-          className="d-flex text-decoration-none"
-        >
-          Men's Clothing
-        </a>
-        <a
-          href="productList.html?category=women's clothing"
-          className="d-flex text-decoration-none"
-        >
-          Women's Clothing
-        </a>
-        <a
-          href="productList.html?category=electronics"
-          className="d-flex text-decoration-none"
-        >
-          Gaming
-        </a>
+        {categories && categories.map((category) => 
+            <a onClick={() => handleCategoryNavigate(category)} key={category} className="d-flex text-decoration-none">{category}
+              </a>)}
       </div>
 
       <div className="sidebar-title">Filter by price</div>
