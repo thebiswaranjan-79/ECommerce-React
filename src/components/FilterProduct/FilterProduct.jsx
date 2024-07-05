@@ -1,9 +1,19 @@
 
+import { useEffect } from "react";
 import "./FilterProduct.css";
+import axios from "axios";
+import { getAllCategories } from "../../apis/fakeStoreProdApis";
 
 function FilterProduct() {
   const minPriceOptions = [0, 10, 20, 50, 100, 200, 1000];
   const maxPriceOptions = [0, 1000, 2000, 3000, 5000, 100000];
+
+  async function downloadCategories(){
+    const response = await axios.get(getAllCategories);
+  }
+  useEffect(() => {
+    downloadCategories();
+  }, [])
 
   return (
     <div className="product-list-sidebar d-flex flex-column">

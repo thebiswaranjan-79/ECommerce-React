@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function CategoryItem({itemName, filter = ''}) {
 
-  const redirectLink = `/products/category=${filter}`;
+  const redirectLink = `/products?category=${filter}`;
 
   return (
     

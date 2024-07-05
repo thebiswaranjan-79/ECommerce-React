@@ -12,7 +12,7 @@ import {
 
 function ProductList() {
   const [productList, setProductList] = useState(null);
-  const [query, setQuery] = useSearchParams();
+  const [query] = useSearchParams();
 
   async function downloadProducts(category) {
     const downloadUrl = category
